@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bali Fashions-Home Page</title>
+  
+  <link rel="stylesheet" href="bali.css/bali.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com" rel="stylesheet">
+
+<style>
+
+.navbar {
+display: grid;
+grid-template-columns: 90px 123px 165px 140px;
+justify-content: center; 
+column-gap: 10px;
+margin-top: 35px;
+background-color:transparent;
+color: white;
+font-weight: bold;
+font-size: 20px;
+width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: blue;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+/* hover effect */
+.navbar a:hover {
+  background-color: purple;
+  color: white;
+}
+
+.banner_container {
+display: grid;
+grid-template-rows: 10px 60px 100px;
+background-color:white;
+  justify-items: center;   /
+  color: red; /* FIXED */
+  align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.Banner_Header1,
+.Banner_Header2 {
+  display: grid;
+  place-items: center;
+  line-height: 0.0;
+}
+
+.Banner_Header1 {
+height: 20px;
+background-color: white; /* 30% visible */;
+color: red;
+font-size: 20px;
+animation: slide 10s infinite linear;
+margin-top: 80px;
+margin-bottom: 30px;
+padding-top: 0px;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+.Banner_Header2 {
+background-color: white;
+color: green;
+height: 60px;
+margin-top:50px;
+border-radius: 70px;
+padding-top: 10px;
+padding-bottom: 20px;
+padding-left: 50px;
+padding-right: 50px;
+  }
+
+.Banner_Header2:hover{
+transform: scale(1.02);
+  background-color: purple;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.middle_segment {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+min-height: 550px;
+background-color: #f9fafb;
+column-gap: 50px;
+margin-top: 30px;
+margin-right: 5px;
+margin-left: 5px;
+padding: 5px;
+font-family:calibri, sans-serif;
+font-weight: 1;
+}
+.first_segment {
+background-color: lightskyblue;
+color: #111827;
+font-family: roboto sans-serif;
+border-radius: 100px;
+margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-left: 15px;
+  font-size-adjust: 1.4rem;
+}
+.first_segment h2 {
+  color: red;
+  font-family: roboto sans-serif;
+  border-left: 4px solid var(--brand-red);
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+.first_segment,
+.second_segment hr {
+  margin: 30px 0;
+}
+
+.first_segment,
+.second_segment ul {
+  padding-left: 20px;
+}
+
+.first_segment,
+.second_segment,
+.third_segment {
+background-color: lightskyblue;
+  padding: 30px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 60px;
+  line-height: 1.3;
+  font-family: calibri;
+  color: #111827;
+  font-size: 22px;
+  height: 1000px;
+}
+
+.first_segment h2,
+.second_segment h2,
+.third_segment h2 {
+ color: red;
+  border-left: 4px solid var(--brand-red);
+  padding-left: 15px;
+  margin-bottom: 20px;
+  font-family: calibri;
+  font-size: 50px;
+  }
+.third_segment {
+background-color: lightskyblue;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 80px;
+  line-height: 1.0;
+  font-family: Calibri;
+  color: #111827;
+  font-size: 20px;
+}
+
+.first_segment:hover,
+.second_segment:hover,
+.third_segment:hover {
+ transform: scale(1.02);
+  background-color: lightgray;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}  
+
+.third_segment_card:hover {
+transform: scale(1.1);
+}
+
+<body> {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* THIS is the key */
+.page_wrapper {
+  flex: 1;
+}
+
+/* footer always at bottom */
+.footer {
+  background: #111827;
+  color: white;
+  padding: 20px;
+}
+
+/* 3-column layout */
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* each section */
+.footer_section h3,
+.footer_section h4 {
+  margin-bottom: 10px;
+  color: #f9fafb;
+}
+
+.footer_section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* links */
+.footer_section a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  color: white;
+}
+
+/* bottom strip */
+.footer_bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  border-top: 1px solid #374151;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer_container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="page_wrapper">
+
+<div class="banner_container">
+
+<div class="navbar">
+
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="products.html">Our Products</a>
+  <a href="contacts.html">Contact Us</a>
+</div>
+
+<div class="Banner_Header1">
+<h1>BALI FASHIONS</h1>
+</div>
+
+<div class="Banner_Header2">
+<h2>Are you looking for a Tested and Trusted Textile Manufacturer?</h2>
+<h3><b>Look No Further!!<b></h3>
+</div>
+</div>
+
+<div class="middle_segment">
+
+<div class="first_segment">
+<p>
+
+  <h2> About Us </h2>
+
+  <p>
+    At <b>Bali Fashions</b>, we are more than just a textile manufacturer—we are a legacy of craftsmanship, consistency, and customer trust built over three decades.
+  </p>
+
+  <p>
+    Founded and proudly managed by the family of <b>Mr. Prakash Haria</b>, Bali Fashions has grown into a respected name in the textile industry, serving both local and regional markets with distinction. From our base in Baba Dogo Light Industrial Area, Nairobi, we specialize in the manufacture of high-quality uniforms, advertising materials, and safety products tailored to meet the evolving needs of our clients.
+  </p>
+
+  <p>
+    Our strength lies in our unwavering commitment to <b>quality, precision, and design excellence</b>. With a team of over 50 skilled and experienced professionals—many of whom have been with us for years—we ensure every product reflects superior craftsmanship and attention to detail.
+  </p>
+
+  <p>
+    At Bali Fashions, <b>customer satisfaction is the foundation of our business</b>. Our clients’ continued trust, positive feedback, and strong recommendations are a testament to our dedication to service excellence.
+  </p>
+
+  <p>
+    As we look ahead, we are focused on growth and expansion, with plans to establish additional branches both locally and regionally to better serve our growing clientele.
+  </p>
+  
+</p>
+</div>
+
+<div class="second_segment">
+<p>
+  <h2>Our Mission</h2>
+  <p>
+    To deliver high-quality textile products through innovative design, skilled craftsmanship, and a strong commitment to customer satisfaction.
+  </p>
+
+  <h2>Our Vision</h2>
+  <p>
+    To be a leading textile manufacturer in Africa, recognized for quality, reliability, and excellence in service delivery.
+  </p>
+
+  <h2>Core Values</h2>
+  <ul>
+    <li><b>Quality Excellence</b> – We never compromise on the standard of our products.</li>
+    <li><b>Customer Focus</b> – Our customers are at the heart of everything we do.</li>
+    <li><b>Integrity</b> – We conduct our business with honesty and transparency.</li>
+    <li><b>Teamwork</b> – We value and empower our skilled workforce.</li>
+    <li><b>Innovation</b> – We continuously improve our designs and processes.</li>
+  </ul>
+  <br>  
+  <hr>
+</p>
+</div>
+
+<div class="third_segment">
+
+  <h2>Our Products</h2>
+
+  <div class="third_segment_grid">
+
+    <div class="third_segment_card">
+      <img src="images/image1.png" alt="School Uniforms">
+      <p>School Uniforms</p>
+      <p>High-quality corporate, school, and industrial uniforms.</p>
+    </div>
+
+    <div class="third_segment_card">
+      <img src="images/image2.png" alt="Security Uniforms">
+      <p>Security Uniforms</p>
+      <p>branded Security Uniforms</p>
+    </div>
+
+    <div class="third_segment_card">
+      <img src="images/image3.png" alt="Safety & Security Products">
+      <p>Safety & Security Products</p>
+      <p>Protective gear designed for safety and durability.</p>
+      <a href="products.html" class="button-style"> Click for More Products</a>
+    </div>
+  </div>
+</p>
+</div>
+</div>
+
+<div class="footer">
+
+  <div class="footer_container">
+
+    <div class="footer_section">
+      <h3>Bali Fashions</h3>
+      <p>
+        Manufacturers of Quality Uniforms, Advertising Materials & Safety Products.
+      </p>
+    </div>
+
+    <div class="footer_section">
+      <h4>Contact Us</h4>
+      <p>
+        Godown No.22, Baba Dogo Road<br>
+        Nairobi, Kenya<br><br>
+
+        Tel: 020 3318170<br>
+        Mobile: 0733-745477<br>
+        Email: info@bali.co.ke
+      </p>
+    </div>
+
+    <div class="footer_section">
+      <h4>Quick Links</h4>
+      <p>
+        <a href="index.html">Home</a><br>
+        <a href="about.html">About Us</a><br>
+        <a href="products.html">Our Products</a><br>
+        <a href="contacts.html">Contact Us</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer_bottom">
+    © <span id="year"></span> Bali Fashions | 
+    <i>Developed by Afrinet HR & OSH Consultants</i>
+  </div>
+
+</div>
+
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

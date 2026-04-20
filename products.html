@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Bali Fashions-Products Page
+</title>
+
+<style>
+
+.navbar {
+display: grid;
+grid-template-columns: 90px 123px 165px 140px;
+justify-content: center; 
+column-gap: 10px;
+margin-top: 35px;
+background-color:transparent;
+color: white;
+font-weight: bold;
+font-size: 20px;
+width: 100%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: blue;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+}
+
+/* hover effect */
+.navbar a:hover {
+  background-color: purple;
+  color: white;
+}
+
+.scrolling_banner{
+display: grid;
+justify-content: center; 
+row-gap: 0px;
+}
+
+.scrolling_banner h1{
+background-color: transparent;
+color: red;
+font-size: 40px;
+margin: 5px;
+animation: slide 3s infinite linear;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-50%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/*.second_header {
+display: grid;
+grid-template-rows: 1fr 1fr;
+row-gap: 0px;
+justify-content: center; 
+}*/
+
+.second_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px; /* controls closeness */
+  padding:15px;
+
+}
+
+.second_header h2,
+.second_header h3 {
+  margin: 0;
+  color: green;
+  border-radius: 50%;
+  }
+
+.second_header {
+  /* ... keep your existing styles ... */
+  border-radius: 100px; /* So the background shift has soft corners */
+}
+
+.second_header:hover {
+  background-color: rgba(0, 128, 0, 0.05); /* Very faint green tint */
+  transform: translateY(-5px); /* Gentle lift instead of scaling */
+}
+
+
+
+ 
+.middle_segment_header {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  text-align: center;
+  background-color: #111827;
+  color: white;
+  padding: 15px;
+  border-radius: 80px;
+  transition: all 0.3s ease;
+}
+
+.middle_segment_header:hover {
+  transform: scale(1.02);
+  background-color: purple;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.middle_segment_body {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+background-color: lightcyan;
+border-radius: 80px;
+justify-content: center; 
+align-items: center;
+column-gap: 20px;
+row-gap: 20px;
+margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 20px;
+margin-right: 20px;
+
+}
+
+.middle_segment_body .gallery_item {
+background-color: cyan;
+place-items: center; 
+}
+
+.middle_segment_body img {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 35px;
+}
+
+.middle_segment_body img:hover {
+  transform: scale(1.1);
+}
+
+/* footer always at bottom */
+.footer {
+  background: #111827;
+  color: white;
+  padding: 20px;
+}
+
+/* 3-column layout */
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* each section */
+.footer_section h3,
+.footer_section h4 {
+  margin-bottom: 10px;
+  color: #f9fafb;
+}
+
+.footer_section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* links */
+.footer_section a {
+  color: #9ca3af;
+  text-decoration: none;
+}
+
+.footer_section a:hover {
+  color: white;
+}
+
+/* bottom strip */
+.footer_bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  border-top: 1px solid #374151;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer_container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="products.html">Our Products</a>
+  <a href="contacts.html">Contact Us</a>
+</div>
+
+<div class="scrolling_banner">
+<h1>BALI FASHIONS</h1>
+</div>
+
+<div class="second_header">
+  <h2>Are you looking for a Tested and Trusted Textile Manufacturer?</h2>
+  <h2>Look No Further!!</h2>
+</div>
+
+<div class="middle_segment_header">
+  <div class="middle_segment_header_2">
+    <h1>Our Photo Gallery</h1>
+  </div>
+</div>
+
+<div class="middle_segment_body">
+<img src="images/image1.png" alt="Uniform">
+<img src="images/image2.png" alt="Uniform">
+<img src="images/image3.png" alt="Uniform">
+<img src="images/image4.png" alt="Uniform">
+<img src="images/image5.png" alt="Uniform">
+<img src="images/image6.png" alt="Uniform">
+<img src="images/image7.png" alt="Uniform">
+<img src="images/image8.jpg" alt="Uniform">
+<img src="images/image9.jpeg" alt="Uniform">
+<img src="images/image10.jpg" alt="Uniform">
+<img src="images/image11.jpeg" alt="Uniform">
+<img src="images/image12.jpeg" alt="Uniform">
+</div>
+
+<div class="footer">
+
+  <div class="footer_container">
+
+    <div class="footer_section">
+      <h3>Bali Fashions</h3>
+      <p>
+        Manufacturers of Quality Uniforms, Advertising Materials & Safety Products.
+      </p>
+    </div>
+
+    <div class="footer_section">
+      <h4>Contact Us</h4>
+      <p>
+        Godown No.22, Baba Dogo Road<br>
+        Nairobi, Kenya<br><br>
+
+        Tel: 020 3318170<br>
+        Mobile: 0733-745477<br>
+        Email: info@bali.co.ke
+      </p>
+    </div>
+
+    <div class="footer_section">
+      <h4>Quick Links</h4>
+      <p>
+        <a href="index.html">Home</a><br>
+        <a href="about.html">About Us</a><br>
+        <a href="products.html">Our Products</a><br>
+        <a href="contacts.html">Contact Us</a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer_bottom">
+    © <span id="year"></span> Bali Fashions | 
+    <i>Developed by Afrinet HR & OSH Consultants</i>
+  </div>
+
+</div>
+
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
