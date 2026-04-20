@@ -175,6 +175,15 @@ background-color: lightskyblue;
   font-family: Calibri;
   color: #111827;
   font-size: 20px;
+  
+  background-color: lightskyblue;
+  padding: 30px;
+  margin: 30px 20px 10px 20px;
+  border-radius: 80px;
+  height: 1000px;     /* Keep your fixed height */
+  overflow: hidden;   /* 🛑 Stops anything from leaking out */
+  display: flex;
+  flex-direction: column;
 }
 
 .first_segment:hover,
@@ -188,6 +197,81 @@ background-color: lightskyblue;
 .third_segment_card:hover {
 transform: scale(1.1);
 }
+
+/* 1. Organize the cards into a vertical stack or grid */
+.third_segment_grid {
+  display: flex;
+  flex-direction: column;
+  border-radius: 50px;
+  gap: 20px;
+  height: 100%; /* Keeps it inside the 1000px segment */
+  overflow-y: auto; /* Adds a scrollbar IF the content is too tall */
+}
+
+/* 2. Control the size of each card */
+.third_segment_card {
+  background: white;
+  padding: 15px;
+  border-radius: 30px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex: 1; /* Helps share space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3. THE MAGIC FIX: Resize the big images */
+.third_segment_card img {
+  width: 100%;        /* Width fills the card */
+  max-height: 150px;  /* Limits height so they don't take over */
+  object-fit: cover;  /* Crops the photo to fit the box without stretching */
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+
+/* 4. Fix for your "Click for More" button */
+.button-style {
+  display: inline-block;
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  margin-top: auto; /* Pushes button to bottom of card */
+}
+
+/* 2. Create a flexible container for the three cards */
+.third_segment_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;          /* Space between cards */
+  flex: 1;            /* Fill the remaining 1000px space */
+  overflow-y: auto;   /* 🖱️ Adds a scrollbar ONLY if content is too big */
+}
+
+/* 3. Constrain the large images */
+.third_segment_card {
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 1;     /* Allows cards to shrink to fit the 1000px height */
+}
+
+.third_segment_card img {
+  width: auto;        /* Let width adjust naturally */
+  max-width: 100%;    /* Don't let it be wider than the card */
+  max-height: 180px;  /* 📏 THE KEY: Limits height so 3 images can fit in 1000px */
+  object-fit: cover;  /* Crops the image to fit the box without stretching */
+  border-radius: 15px;
+}
+
+
+
 
 <body> {
   min-height: 100vh;
@@ -342,22 +426,18 @@ transform: scale(1.1);
   <div class="third_segment_grid">
 
     <div class="third_segment_card">
-      <img src="image1.png" alt="School Uniforms">
+      <img src="images/image1.png" alt="School Uniforms">
       <p>School Uniforms</p>
       <p>High-quality corporate, school, and industrial uniforms.</p>
     </div>
 
     <div class="third_segment_card">
-      <img src="image2.png" alt="Security Uniforms">
+      <img src="images/image2.png" alt="Security Uniforms">
       <p>Security Uniforms</p>
       <p>branded Security Uniforms</p>
     </div>
-
-    <div class="third_segment_card">
-      <img src="image3.png" alt="Safety & Security Products">
-      <p>Safety & Security Products</p>
-      <p>Protective gear designed for safety and durability.</p>
-      <a href="products.html" class="button-style"> Click for More Products</a>
+     
+      <a style="text-align: center;"  href="products.html" class="button-style"> Click for More Products</a>
     </div>
   </div>
 </p>
