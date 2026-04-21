@@ -6,242 +6,229 @@
     
    <title>Bali Fashions-Contacts Page</title>
     <style>
-   
-.navbar {
-display: grid;
-grid-template-columns: 90px 123px 165px 140px;
-justify-content: center; 
-column-gap: 10px;
-margin-top: 35px;
-background-color:transparent;
-color: white;
-font-weight: bold;
-font-size: 20px;
-width: 100%;
+/* 1. Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: 'Calibri', sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Responsive Navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  justify-content: center; 
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  justify-items: center; 
+  margin: 20px auto;   /* KEY FIX */
+   }
+
 .navbar a {
+display: flex;
+flex-wrap: wrap;
   text-decoration: none;
   color: blue;
   padding: 10px 15px;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   border-radius: 50px;
-}
+  font-weight: bold;
+  font-size: 18px;
+  flex: 1 1 120px;   /* THIS is the real solution */
+  text-align: center;
+  place-items: center; 
+  justify-content: center; 
+  justify-items: center; 
+  align-items: center;   /* vertical centering */
+ }
 
-/* hover effect */
 .navbar a:hover {
   background-color: purple;
   color: white;
 }
 
-.scrolling_banner{
-display: grid;
-justify-content: center; 
-row-gap: 0px;
+/* 3. Headers & Banners */
+.scrolling_banner {
+  text-align: center;
+  overflow: hidden;
+  padding: 10px;
 }
 
-.scrolling_banner h1{
-background-color: transparent;
-color: red;
-font-size: 40px;
-margin: 5px;
-animation: slide 3s infinite linear;
+.scrolling_banner h1 {
+  color: red;
+  font-size: clamp(30px, 8vw, 50px);
 }
-
-@keyframes slide {
-  0% { transform: translateX(-50%); }
-  50% { transform: translateX(0); }
-  100% { transform: translateX(50%); }
-}
-
-/*.second_header {
-display: grid;
-grid-template-rows: 1fr 1fr;
-row-gap: 0px;
-justify-content: center; 
-}*/
 
 .second_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 2px; /* controls closeness */
-  padding:15px;
-
-}
-
-.second_header h2,
-.second_header h3 {
-  margin: 0;
+  padding: 20px;
   color: green;
+}
+
+/* 4. Contact Wrapper - Responsive Grid */
+.contact_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+ grid-template-columns: 1fr 1fr;
+ 
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex: 1; /* Pushes footer down */
+}
+
+.contact_form_area, .contact_map_area {
+  background: white;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.contact_form_area:hover, .contact_map_area:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  background-color: #f0f4f8;
+}
+
+/* Form Styles */
+.bali_form h2 {
+  margin-bottom: 20px;
+  color: #1a2e44;
+}
+
+.bali_form input, .bali_form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.contact_submit_btn {
+  background-color: #1a2e44;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.contact_submit_btn:hover {
+  background-color: purple;
+}
+
+/* 5. Modal / Pop-up Styles */
+.modal {
+  border: none;
+  border-radius: 30px;
+  padding: 0;
+  margin: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal_content {
+  padding: 40px;
+  text-align: center;
+}
+
+.success_icon {
+  font-size: 40px;
+  color: #27ae60;
+  background: #e8f5e9;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
   border-radius: 50%;
-  }
-
-.second_header {
-  /* ... keep your existing styles ... */
-  border-radius: 100px; /* So the background shift has soft corners */
+  margin: 0 auto 20px;
 }
 
-.second_header:hover {
-  background-color: rgba(0, 128, 0, 0.05); /* Very faint green tint */
-  transform: translateY(-5px); /* Gentle lift instead of scaling */
-}
-
-
-        /* --- MODAL STYLES --- */
-        .modal {
-            border: none;
-            border-radius: 20px;
-            padding: 0;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            max-width: 450px;
-            width: 90%;
-        }
-
-        .modal::backdrop {
-            background: rgba(26, 46, 68, 0.7);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal_content {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .success_icon {
-            font-size: 50px;
-            color: #27ae60;
-            background: #e8f5e9;
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-        }
-
-        .close_btn {
-            margin-top: 25px;
-            padding: 12px 30px;
-            background: #1a2e44;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* --- CONTACT SECTION STYLES (Moved from body to here) --- */
-        .contact_wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-            font-family: sans-serif;
-        }
-        .contact_form_area, .contact_map_area {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-.contact_form_area:hover{
-transform: scale(1.02);
-  background-color: lightgray;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-        .bali_form input, .bali_form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box; /* Ensures padding doesn't break width */
-        }
-
-        .contact_submit_btn {
-            background-color: #1a2e44;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            width: 100%;
-            transition: background 0.3s;
-        }
-
-        .contact_submit_btn:hover {
-            background-color: #c0392b;
-        }
-
-        @media (max-width: 850px) {
-            .contact_wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-  .contact_map_area:hover{
-transform: scale(1.02);
-  background-color: lightgray;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-        
- /* footer always at bottom */
+/* 5. Responsive Footer */
 .footer {
   background: #111827;
   color: white;
-  padding: 20px;
+  padding: 40px 20px;
+  margin-top: 40px;
 }
 
-/* 3-column layout */
 .footer_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* each section */
-.footer_section h3,
-.footer_section h4 {
-  margin-bottom: 10px;
+.footer_section h3, .footer_section h4 {
+  margin-bottom: 15px;
   color: #f9fafb;
 }
 
-.footer_section p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* links */
 .footer_section a {
   color: #9ca3af;
   text-decoration: none;
+  line-height: 2;
 }
 
-.footer_section a:hover {
-  color: white;
-}
-
-/* bottom strip */
 .footer_bottom {
   text-align: center;
-  margin-top: 20px;
-  font-size: 13px;
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid #374151;
-  padding-top: 10px;
+  font-size: 13px;
 }
 
-@media (max-width: 768px) {
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+  .about_page {
+    grid-template-columns: 1fr; /* Stack columns on tablets/phones */
+    margin: 10px;
+  }
+
   .footer_container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack footer columns */
     text-align: center;
   }
-}
+  
+  .navbar a {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
 
-    </style>
+  .contact_form_area, .contact_map_area {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
+</style>
+
+  
 </head>
 <body>
 
