@@ -10,9 +10,10 @@ Bali Fashions-Products Page
 
 <style>
 .navbar {
-display: grid;
-grid-template-columns:80px 120px 140px 120px;
+display: flex;
+flex-wrap: wrap;
 justify-content: center; 
+justify-items: center; 
 align-items: center;
 text-align: center;
 margin-top: 35px;
@@ -31,14 +32,16 @@ padding: 0px 5px;
   border-radius: 50px;
   flex: 1 1 20%;
 }
-/* hover effect */
+ /* hover effect */
 .navbar a:hover {
   background-color: purple;
   color: white;
 }
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .scrolling_banner{
 display: grid;
 justify-content: center; 
@@ -63,20 +66,117 @@ animation: slide 3s infinite linear;
   text-align: center;
   gap: 2px; /* controls closeness */
   padding:15px;
+  border-radius: 100px;
 }
 .second_header h2,
 .second_header h3 {
   margin: 0;
   color: green;
-  border-radius: 50%;
   }
-.second_header {
-  /* ... keep your existing styles ... */
-  border-radius: 100px; /* So the background shift has soft corners */
-}
 .second_header:hover {
   background-color: rgba(0, 128, 0, 0.05); /* Very faint green tint */
   transform: translateY(-5px); /* Gentle lift instead of scaling */
+}
+/* 4. About Page - Flexible Grid */
+.about_page {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+  gap: 30px;
+  padding: 40px 20px;
+  flex: 1; /* Pushes footer down */
+}
+.first_section, .second_section {
+  background-color: lightskyblue;
+  border-radius: 50px;
+  padding: 35px;
+  line-height: 1.6;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}  
+.first_section:hover, .second_section:hover {
+  transform: scale(1.02);
+  background-color: #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}  
+.about_page h2 {
+  color: #dc2626;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+.about_page ul {
+  padding-left: 25px;
+  margin-top: 15px;
+}
+/* 5. Responsive Footer */
+.footer {
+  background: #111827;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 40px;
+}
+.footer_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer_section h3, .footer_section h4 {
+  margin-bottom: 15px;
+  color: #f9fafb;
+}
+.footer_section a {
+  color: #9ca3af;
+  text-decoration: none;
+  line-height: 2;
+}
+.footer_bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #374151;
+  font-size: 13px;
+}
+.footer_section a:hover
+{
+background-color: white;
+color: blue;
+font-weight: 0;
+border-radius: 10px;
+padding:0px 10px;
+}
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 600px) 
+{
+.navbar {
+display: flex;
+}
+.scrolling_banner h1 {
+font-size: 25px;
+}
+.about_page {
+    grid-template-columns: 1fr; /* Stack columns on tablets/phones */
+    margin: 10px;
+  }
+.footer_container {
+    grid-template-columns: 1fr; /* Stack footer columns */
+    text-align: center;
+  }
+.navbar a {
+  flex: 0 0 25%;
+  font-size: 16px;
+  padding: 8px 12px;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  }
+.Banner_Header2 {
+    border-radius: 30px;
+    padding: 15px;
+  }
+.Banner_Header2 h2 {
+    font-size: 18px;
+  }
 }
 .middle_segment_header {
   display: grid;
@@ -161,36 +261,6 @@ color: blue;
 font-weight: 0;
 border-radius: 10px;
 padding:0px 10px;
-}
-@media (max-width: 500px) 
-{
-.navbar {
-    grid-template-columns: 1fr;
-  }
-.navbar a {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 16px;
-  padding: 8px 5px;
-  justify-content: center; 
-  align-items: center;
-  text-align: center;
-  }
-.scrolling_banner h1 {
-font-size: 25px;
-}
-.Banner_Header2 {
-    border-radius: 30px;
-    padding: 15px;
-  }
-.Banner_Header2 h2 {
-    font-size: 18px;
-  }
-.footer_container {
-display: grid;
-    grid-template-columns: 1fr; /* Stack footer columns */
-    text-align: center;
-  }
 }
 </style>
 </head>
