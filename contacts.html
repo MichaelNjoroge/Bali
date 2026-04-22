@@ -12,85 +12,89 @@
   margin: 0;
   padding: 0;
 }
+/* 2. Responsive Navbar */
+.navbar {
+display: grid;
+grid-template-columns:80px 120px 140px 120px;
+justify-content: center; 
+align-items: center;
+text-align: center;
+margin-top: 35px;
+background-color:transparent;
+color: white;
+font-weight: bold;
+font-size: 18px;
+width: 100%;
+padding: 0px 5px;
+}
+.navbar a {
+  text-decoration: none;
+  color: blue;
+  padding: 10px 5px;
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  flex: 1 1 20%;
+}
+ /* hover effect */
+.navbar a:hover {
+  background-color: purple;
+  color: white;
+}
 
 body {
-  font-family: 'Calibri', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9fafb;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* 2. Responsive Navbar */
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 600px;
-  justify-content: center; 
-  gap: 10px;
-  padding: 20px;
-  text-align: center;
-  justify-items: center; 
-  margin: 20px auto;   /* KEY FIX */
-   }
-
-.navbar a {
-display: flex;
-flex-wrap: wrap;
-  text-decoration: none;
-  color: blue;
-  padding: 10px 15px;
-  transition: 0.3s;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 18px;
-  flex: 1 1 120px;   /* THIS is the real solution */
-  text-align: center;
-  place-items: center; 
-  justify-content: center; 
-  justify-items: center; 
-  align-items: center;   /* vertical centering */
- }
-
-.navbar a:hover {
-  background-color: purple;
-  color: white;
+.scrolling_banner{
+display: grid;
+justify-content: center; 
+row-gap: 0px;
 }
-
-/* 3. Headers & Banners */
-.scrolling_banner {
-  text-align: center;
-  overflow: hidden;
-  padding: 10px;
+.scrolling_banner h1{
+background-color: transparent;
+color: red;
+font-size: 40px;
+margin: 5px;
+animation: slide 3s infinite linear;
 }
-
-.scrolling_banner h1 {
-  color: red;
-  font-size: clamp(30px, 8vw, 50px);
+@keyframes slide {
+  0% { transform: translateX(-50%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
 }
-
 .second_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 20px;
-  color: green;
+  gap: 2px; /* controls closeness */
+  padding:15px;
+  border-radius: 100px;
 }
-
+.second_header h2,
+.second_header h3 {
+  margin: 0;
+  color: green;
+  }
+.second_header:hover {
+  background-color: rgba(0, 128, 0, 0.05); /* Very faint green tint */
+  transform: translateY(-5px); /* Gentle lift instead of scaling */
+}
 /* 4. Contact Wrapper - Responsive Grid */
 .contact_wrapper {
   display: flex;
   flex-wrap: wrap;
- grid-template-columns: 1fr 1fr;
- 
+  grid-template-columns: 1fr 1fr;
   gap: 30px;
   max-width: 1200px;
   margin: 40px auto;
   padding: 0 20px;
   flex: 1; /* Pushes footer down */
 }
-
 .contact_form_area, .contact_map_area {
   background: white;
   max-width: 500px;
@@ -99,19 +103,16 @@ flex-wrap: wrap;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: 0.3s;
 }
-
 .contact_form_area:hover, .contact_map_area:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  background-color: #f0f4f8;
+  background-color: lightgrey;
 }
-
 /* Form Styles */
 .bali_form h2 {
   margin-bottom: 20px;
   color: #1a2e44;
 }
-
 .bali_form input, .bali_form textarea {
   width: 100%;
   padding: 15px;
@@ -120,7 +121,6 @@ flex-wrap: wrap;
   border-radius: 12px;
   font-size: 16px;
 }
-
 .contact_submit_btn {
   background-color: #1a2e44;
   color: white;
@@ -132,11 +132,9 @@ flex-wrap: wrap;
   width: 100%;
   transition: 0.3s;
 }
-
 .contact_submit_btn:hover {
   background-color: purple;
 }
-
 /* 5. Modal / Pop-up Styles */
 .modal {
   border: none;
@@ -147,17 +145,14 @@ flex-wrap: wrap;
   max-width: 400px;
   width: 90%;
 }
-
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(4px);
 }
-
 .modal_content {
   padding: 40px;
   text-align: center;
 }
-
 .success_icon {
   font-size: 40px;
   color: #27ae60;
@@ -168,7 +163,6 @@ flex-wrap: wrap;
   border-radius: 50%;
   margin: 0 auto 20px;
 }
-
 /* 5. Responsive Footer */
 .footer {
   background: #111827;
@@ -176,7 +170,6 @@ flex-wrap: wrap;
   padding: 40px 20px;
   margin-top: 40px;
 }
-
 .footer_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -184,18 +177,15 @@ flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .footer_section h3, .footer_section h4 {
   margin-bottom: 15px;
   color: #f9fafb;
 }
-
 .footer_section a {
   color: #9ca3af;
   text-decoration: none;
   line-height: 2;
 }
-
 .footer_bottom {
   text-align: center;
   margin-top: 30px;
@@ -203,35 +193,37 @@ flex-wrap: wrap;
   border-top: 1px solid #374151;
   font-size: 13px;
 }
-
+.footer_section a:hover
+{
+background-color: white;
+color: blue;
+font-weight: 0;
+border-radius: 10px;
+padding:0px 10px;
+}
 /* 📱 MOBILE RESPONSIVENESS */
 @media (max-width: 900px) {
   .about_page {
     grid-template-columns: 1fr; /* Stack columns on tablets/phones */
     margin: 10px;
   }
-
   .footer_container {
     grid-template-columns: 1fr; /* Stack footer columns */
     text-align: center;
   }
-  
-  .navbar a {
+ .navbar a {
     font-size: 16px;
     padding: 8px 10px;
   }
-
-  .contact_form_area, .contact_map_area {
+.contact_form_area, .contact_map_area {
     padding: 20px;
     border-radius: 20px;
   }
 }
 </style>
-
-  
 </head>
-<body>
 
+<body>
 <div class="navbar">
   <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
@@ -343,7 +335,6 @@ flex-wrap: wrap;
   </div>
 
 </div>
-
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
