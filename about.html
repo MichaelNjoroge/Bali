@@ -6,191 +6,186 @@
     
 <title>Bali_Fashions-About Page</title>
 
-<style> 
-
+<style>
+/* 1. Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* 2. Responsive Navbar */
 .navbar {
 display: grid;
-grid-template-columns: 90px 123px 165px 140px;
+grid-template-columns:80px 120px 140px 120px;
 justify-content: center; 
-column-gap: 10px;
+align-items: center;
+text-align: center;
 margin-top: 35px;
 background-color:transparent;
 color: white;
 font-weight: bold;
-font-size: 20px;
+font-size: 18px;
 width: 100%;
+padding: 0px 5px;
 }
-
 .navbar a {
   text-decoration: none;
   color: blue;
-  padding: 10px 15px;
+  padding: 10px 5px;
   transition: all 0.3s ease;
   border-radius: 50px;
+  flex: 1 1 20%;
 }
-
-/* hover effect */
+ /* hover effect */
 .navbar a:hover {
   background-color: purple;
   color: white;
 }
-
-.banner_container {
+.scrolling_banner{
 display: grid;
-grid-template-rows: 10px 60px 100px;
-background-color:white;
-  justify-items: center;   /
-  color: red; /* FIXED */
-  align-items: center;
-  margin-left: 5px;
-  margin-right: 5px;
+justify-content: center; 
+row-gap: 0px;
 }
-
-.Banner_Header1,
-.Banner_Header2 {
-  display: grid;
-  place-items: center;
-  line-height: 0.0;
-}
-
-.Banner_Header1 {
-height: 20px;
-background-color: white; /* 30% visible */;
+.scrolling_banner h1{
+background-color: transparent;
 color: red;
-font-size: 20px;
-margin-top: 40px;
-animation: slide 10s infinite linear;
+font-size: 40px;
+margin: 5px;
+animation: slide 3s infinite linear;
 }
-
 @keyframes slide {
-  0% { transform: translateX(-100%); }
+  0% { transform: translateX(-50%); }
   50% { transform: translateX(0); }
-  100% { transform: translateX(100%); }
+  100% { transform: translateX(50%); }
 }
-
-.Banner_Header2 {
-background-color: white;
-color: green;
-height: 60px;
-margin-top:50px;
-border-radius: 70px;
-padding-top: 10px;
-padding-bottom: 20px;
-padding-left: 50px;
-padding-right: 50px;
+.second_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px; /* controls closeness */
+  padding:15px;
+  border-radius: 100px;
+}
+.second_header h2,
+.second_header h3 {
+  margin: 0;
+  color: green;
   }
-
-.Banner_Header2:hover{
-transform: scale(1.02);
-  background-color: purple;
-  color: white;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.second_header:hover {
+  background-color: rgba(0, 128, 0, 0.05); /* Very faint green tint */
+  transform: translateY(-5px); /* Gentle lift instead of scaling */
 }
+/* 4. About Page - Flexible Grid */
 .about_page {
-display: grid;
-grid-template-columns: 1fr 1fr;
-  background-color: transparent;
-  column-gap: 35px;
-  padding: 30px;
-  margin: 40px;
-  border-radius: 60px;
-  line-height: 1.8;
-  font-weight: 1.0;
-  font-family: calibri;
-  color: #111827;
-  font-size: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+  gap: 30px;
+  padding: 40px 20px;
+  flex: 1; /* Pushes footer down */
 }
-.first_section,
-.second_section {
-background-color: lightskyblue;
-border-radius: 50px;
-padding:25px;
-line-height: 1.8;
-font-size: 22;
+.first_section, .second_section {
+  background-color: lightskyblue;
+  border-radius: 50px;
+  padding: 35px;
+  line-height: 1.6;
+  font-size: 20px;
+  transition: transform 0.3s ease;
 }  
-
-.first_section:hover,
-.second_section:hover {
- transform: scale(1.02);
-  background-color: lightgray;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  font-size: 22;
+.first_section:hover, .second_section:hover {
+  transform: scale(1.02);
+  background-color: #e5e7eb;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }  
-
 .about_page h2 {
-  color: #dc2626; /* your brand red */
-  margin-top: 20px;
-  font-size: 25pax;
+  color: #dc2626;
+  margin-bottom: 20px;
+  font-size: 32px;
 }
-
-.about_page hr {
-  margin: 30px 0;
-}
-
 .about_page ul {
-  padding-left: 20px;
+  padding-left: 25px;
+  margin-top: 15px;
 }
-
-/* footer always at bottom */
+/* 5. Responsive Footer */
 .footer {
   background: #111827;
   color: white;
-  padding: 20px;
+  padding: 40px 20px;
+  margin-top: 40px;
 }
-
-/* 3-column layout */
 .footer_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-/* each section */
-.footer_section h3,
-.footer_section h4 {
-  margin-bottom: 10px;
+.footer_section h3, .footer_section h4 {
+  margin-bottom: 15px;
   color: #f9fafb;
 }
-
-.footer_section p {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* links */
 .footer_section a {
   color: #9ca3af;
   text-decoration: none;
+  line-height: 2;
 }
-
-.footer_section a:hover {
-  color: white;
-}
-
-
-/* bottom strip */
 .footer_bottom {
   text-align: center;
-  margin-top: 20px;
-  font-size: 13px;
+  margin-top: 30px;
+  padding-top: 20px;
   border-top: 1px solid #374151;
-  padding-top: 10px;
+  font-size: 13px;
 }
-
-@media (max-width: 768px) {
-  .footer_container {
-    grid-template-columns: 1fr;
+.footer_section a:hover
+{
+background-color: white;
+color: blue;
+font-weight: 0;
+border-radius: 10px;
+padding:0px 10px;
+}
+/* 📱 MOBILE RESPONSIVENESS */
+@media (max-width: 800px) {
+.scrolling_banner h1 {
+font-size: 25px;
+}
+.about_page {
+    grid-template-columns: 1fr; /* Stack columns on tablets/phones */
+    margin: 10px;
+  }
+.footer_container {
+    grid-template-columns: 1fr; /* Stack footer columns */
     text-align: center;
   }
+.navbar a {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  padding: 8px 12px;
+  justify-content: center; 
+  align-items: center;
+  text-align: center;
+  }
+.Banner_Header2 {
+    border-radius: 30px;
+    padding: 15px;
+  }
+.Banner_Header2 h2 {
+    font-size: 18px;
+  }
 }
-
 </style>
 
 </head>
 
 <body>
-
-<div class="banner_container">
 
 <div class="navbar">
   <a href="index.html">Home</a>
@@ -199,14 +194,13 @@ font-size: 22;
   <a href="contacts.html">Contact Us</a>
 </div>
 
-<div class="Banner_Header1">
+<div class="scrolling_banner">
 <h1>BALI FASHIONS</h1>
 </div>
 
-<div class="Banner_Header2">
-<h2>Are you looking for a Tested and Trusted Textile Manufacturer?</h2>
-<h3><b>Look No Further!!<b></h3>
-</div>
+<div class="second_header">
+  <h2>Are you looking for a Tested and Trusted Textile Manufacturer?</h2>
+  <h2>Look No Further!!</h2>
 </div>
 
 <div class="about_page">
